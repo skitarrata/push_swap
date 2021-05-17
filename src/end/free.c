@@ -1,16 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/31 16:54:25 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/05/04 19:59:15 by plpelleg         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "../header/cub3d.h"
+#include "../header/push_swap.h"
 
 /*
 All following functions free, for each structure, the variables which have
