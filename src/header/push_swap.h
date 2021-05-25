@@ -3,6 +3,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include "libft.h"
 # include "error.h"
 
@@ -14,6 +15,13 @@ typedef struct	s_swap
 
 //utils
 void	ft_putstr(char *text);
+void	ft_init_vet(t_swap *swap, int argc, char **argv);
+
+//parsing
+void	ft_parse_arg(int argc, char **argv);
+
+//Check
+void	ft_check_num(char *argv);
 
 //push
 void	ft_sa(t_swap *swap);

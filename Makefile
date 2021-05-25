@@ -1,23 +1,21 @@
-NAME = cub3D
-MAP = maps/big.cu
+NAME = push_swap
+VET = 1 3 5 7
 
 LIBFT = ./libft.a
-MLX = libmlx.dylib
+FLAGS = -Wall -Wextra -Werror
 
-FLAGS = -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror
-
-SRCS = 	$(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c')
-FILES = $(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c' -o -name '*.h' ! -name 'mlx.h')
+SRCS = 	$(shell find . -name '*.c')
+FILES = $(shell find . -name '*.c' -name '*.h')
 
 OBJ = $(SRCS:.c=.o)
 CC	=	gcc
 
-$(NAME): $(OBJ) $(MLX) $(LIBFT)
+$(NAME): $(OBJ) $(LIBFT)
 	@echo "[Removing last version...]"
-	@rm -rf Cub3D
-	@echo "[Cub3D compilation...]"
+	@rm -rf push_swap
+	@echo "[push_swap compilation...]"
 	@$(MAKE) bonus -C ./libft
-	@gcc $(SRCS) $(FLAGS) $(MLX)  $(LIBFT) -o $(NAME) -g
+	@$(CC) $(SRCS) $(FLAGS) $(LIBFT) -o $(NAME) -g
 	@echo "[Done!]"
 	@$(MAKE) clean
 #-fsanitize=address
@@ -28,28 +26,23 @@ $(LIBFT):
 	@$(MAKE) clean -C ./libft
 	@mv libft/libft.a .
 
-$(MLX):
-	@echo "[compiling mlx...]"
-	@$(MAKE) -C src/header/minilibx_mms_20200219
-	@mv src/header/minilibx_mms_20200219/libmlx.dylib .
-
 all : $(NAME)
 
 norme:
 	@norminette $(FILES)
 
 leaks: $(MAKE) all
-	@leaks --atExit -- ./$(NAME) $(MAP)
+	@leaks --atExit -- ./$(NAME) $(VET)
 
 run: $(MAKE) re
-	@./$(NAME) $(MAP)
+	@./$(NAME) $(VET)
 
 clean:
 	@rm -rf $(OBJ)
 	@$(MAKE) clean -C ./libft
 
 fclean: clean
-	@rm -rf $(NAME) $(LIBFT) $(MLX)
+	@rm -rf $(NAME) $(LIBFT)
 	@$(MAKE) fclean -C ./libft
 
 re : fclean all

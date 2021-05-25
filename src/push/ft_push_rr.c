@@ -9,7 +9,7 @@ void	ft_ra(t_swap *swap)
 	if (swap->veta == NULL)
 		return ;
 	i = 0;
-	dim = ft_strlen((char)swap->veta);
+	dim = ft_strlen((char *)swap->veta);
 	tmp = swap->veta[i];
 	while (i < dim)
 	{
@@ -30,7 +30,7 @@ void	ft_rb(t_swap *swap)
 	if (swap->vetb == NULL)
 		return ;
 	i = 0;
-	dim = ft_strlen((char)swap->vetb);
+	dim = ft_strlen((char *)swap->vetb);
 	tmp = swap->vetb[i];
 	while (i < dim)
 	{
@@ -50,7 +50,7 @@ void	ft_rra(t_swap *swap)
 
 	if (swap->veta == NULL)
 		return ;
-	dim = ft_strlen((char)swap->veta);
+	dim = ft_strlen((char *)swap->veta);
 	i = dim - 1;
 	tmp = swap->veta[i];
 	while (i < 0)
@@ -71,7 +71,7 @@ void	ft_rrb(t_swap *swap)
 
 	if (swap->vetb == NULL)
 		return ;
-	dim = ft_strlen((char)swap->vetb);
+	dim = ft_strlen((char *)swap->vetb);
 	i = dim - 1;
 	tmp = swap->vetb[i];
 	while (i < 0)

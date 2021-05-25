@@ -8,6 +8,7 @@ This header file contains all macros for errors to be displayed.
 
 
 # define END "THE END"
+# define PAR "THERE ARE NOT ARGUMENTS\n"
 # define MALLOC_FAIL "FAILED TO ALLOCATE MEMORY\n"
 # define BAD_PAR "BAD PARAMETER\n"
 
