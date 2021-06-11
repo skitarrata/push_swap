@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/11 15:23:44 by svalenti          #+#    #+#             */
+/*   Updated: 2021/06/11 18:29:43 by svalenti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -15,7 +27,7 @@ typedef struct	s_swap
 
 //utils
 void	ft_putstr(char *text);
-void	ft_init_vet(t_swap *swap, int argc, char **argv);
+void	ft_init_vet(t_swap *swap, char **argv);
 
 //parsing
 void	ft_parse_arg(int argc, char **argv);

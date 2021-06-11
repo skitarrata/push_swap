@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/11 15:24:13 by svalenti          #+#    #+#             */
+/*   Updated: 2021/06/11 18:31:32 by svalenti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header/push_swap.h"
 
 void	ft_print(t_swap *swap, int argc)
@@ -5,7 +17,7 @@ void	ft_print(t_swap *swap, int argc)
 	int i;
 
 	i = -1;
-	while (++i < argc - 1)
+	while (++i < argc)
 		printf("%d\n", swap->veta[i]);
 }
 
@@ -17,7 +29,7 @@ int		main(int argc, char *argv[])
 	if (!swap)
 		ft_error(MALLOC_FAIL);
 	ft_parse_arg(argc, argv);
-	ft_init_vet(swap, argc, argv);
+	ft_init_vet(swap, argv);
 	ft_print(swap, argc);
 	exit(0);
 }
@@ -32,7 +44,7 @@ int		main(int argc, char *argv[])
 
 
 
-
+/* 
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -107,4 +119,4 @@ int main()
     int n = sizeof(arr) / sizeof(arr[0]);
     printf("vet of lis is %d\n", ft_lis(arr, n));
     return 0;
-}
+} */

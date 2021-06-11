@@ -1,5 +1,5 @@
 NAME = push_swap
-VET = 1 3 5 7
+VET = 1 333 5 7
 
 LIBFT = ./libft.a
 FLAGS = -Wall -Wextra -Werror
