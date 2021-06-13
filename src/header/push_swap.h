@@ -21,19 +21,24 @@
 
 typedef struct	s_swap
 {
-	int			*veta;
-	int			*vetb;
+	long		*veta;
+	long		*vetb;
+	int			lena;
+	int			lenb;
 }				t_swap;
 
 //utils
 void	ft_putstr(char *text);
 void	ft_init_vet(t_swap *swap, char **argv);
+void	ft_print(t_swap *swap);
 
 //parsing
-void	ft_parse_arg(int argc, char **argv);
+void	ft_parse_arg(t_swap *swap, int argc, char **argv);
 
 //Check
-void	ft_check_num(char *argv);
+void	ft_check_num(t_swap *swap, char *argv);
+void	ft_check_double(t_swap *swap, char *argv[]);
+void	ft_check_int(t_swap *swap, char *argv[]);
 
 //push
 void	ft_sa(t_swap *swap);
@@ -48,6 +53,8 @@ void	ft_rb(t_swap *swap);
 void	ft_rra(t_swap *swap);
 void	ft_rrb(t_swap *swap);
 
-void	ft_error(char *text);
+//free
+void	ft_free_swap(t_swap *swap);
+void	ft_error(t_swap *swap, char *text);
 
 #endif

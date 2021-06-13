@@ -14,9 +14,14 @@
 # define ERROR_H
 
 
-# define END "THE END"
+# define END "THE END\n"
 # define PAR "THERE ARE NOT ARGUMENTS\n"
 # define MALLOC_FAIL "FAILED TO ALLOCATE MEMORY\n"
 # define BAD_PAR "BAD PARAMETER\n"
+# define DOU_PAR "DOUBLE PARAMETER\n"
+# define OVER "OVERFLOW INT\n"
+# define NOT_VETA "STACK A INEXISTENT\n"
+# define NOT_VETB "STACK B INEXISTENT\n"
+# define NOT_VET "STACKS INEXISTENT\n"
 
 #endif

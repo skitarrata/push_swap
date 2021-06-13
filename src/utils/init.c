@@ -12,7 +12,7 @@
 
 #include "../header/push_swap.h"
 
-static int	ft_word_counter(char *argv[])
+static void	ft_word_counter(t_swap *swap, char *argv[])
 {
 	int	i;
 	int	j;
@@ -36,50 +36,53 @@ static int	ft_word_counter(char *argv[])
 			}
 		}
 	}
-	return (count - 1);
+	swap->lena = count - 1;
 }
 
-/* static void		ft_conversion_num(t_swap *swap, char *argv)
+void	ft_print(t_swap *swap)
 {
 	int i;
-	int res;
-	int sign;
 
 	i = -1;
-	res = 0;
-	sign = 0;
-	while (argv[++i])
-	{
-		while (argv[i] >= 48 && argv[i] <= 57)
-			swap->veta[i - 1] = (swap->veta[i - 1] * 10) + argv[i] - 48;
-	}
-	swap->veta[i - 1]
-} */
+	while (++i < swap->lena)
+		printf("%ld\n", swap->veta[i]);
+}
 
 void	ft_init_vet(t_swap *swap, char *argv[])
 {
 	int i;
 	int j;
 	int k;
+	int sign;
 
 	i = 0;
 	k = 0;
+	sign = 1;
 	swap->vetb = NULL;
-	swap->veta = ft_calloc(ft_word_counter(argv), sizeof(int));
+	ft_word_counter(swap, argv);
+	swap->veta = (long *)ft_calloc(swap->lena, sizeof(long));
 	if (!(swap->veta))
-		ft_error(MALLOC_FAIL);
+		ft_error(swap, MALLOC_FAIL);
 	while (argv[++i])
 	{
-		j = 0;
-		while (argv[i][j])
+		j = -1;
+		while (argv[i][++j])
 		{
+			if (argv[i][j] == '-')
+				sign = -1;
 			if (argv[i][j] >= 48 && argv[i][j] <= 57)
 			{
-				swap->veta[k] = (swap->veta[k] * 10) + argv[i][j] - 48;
+				swap->veta[k] = ((swap->veta[k] * 10) + argv[i][j] - 48);
 				if ((argv[i][j + 1] == ' ' || !argv[i][j + 1]))
+				{
+					swap->veta[k] *= sign;
+					sign = 1;
 					k++;
+				}
 			}
-			j++;
 		}
 	}
+	ft_check_double(swap, argv);
+	ft_check_int(swap, argv);
+	ft_print(swap);
 }

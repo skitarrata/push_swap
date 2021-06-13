@@ -12,26 +12,23 @@
 
 #include "header/push_swap.h"
 
-void	ft_print(t_swap *swap, int argc)
-{
-	int i;
-
-	i = -1;
-	while (++i < argc)
-		printf("%d\n", swap->veta[i]);
-}
-
 int		main(int argc, char *argv[])
 {
 	t_swap	*swap;
 
-	swap = ft_calloc(1, sizeof(t_swap));
+	swap = (t_swap *)ft_calloc(1, sizeof(t_swap));
 	if (!swap)
-		ft_error(MALLOC_FAIL);
-	ft_parse_arg(argc, argv);
+		ft_error(swap, MALLOC_FAIL);
+	ft_parse_arg(swap, argc, argv);
 	ft_init_vet(swap, argv);
-	ft_print(swap, argc);
-	exit(0);
+	if (swap->lena == 1)
+	{
+		ft_print(swap);
+		ft_error(swap, END);
+	}
+	ft_rra(swap);
+	ft_print(swap);
+	ft_error(swap, END);
 }
 
 
