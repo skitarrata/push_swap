@@ -22,7 +22,7 @@ long	*ft_intjoin(t_swap *swap, long const *vet, int dim)
 	if (!nvet)
 		ft_error(swap, MALLOC_FAIL);
 	while (++i < dim)
-		nvet[i] = vet[i];
+		nvet[i] = vet[i - 1];
 	return (nvet);
 }
 

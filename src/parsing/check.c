@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 15:23:15 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/11 17:46:45 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/06/14 15:48:04 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ void	ft_check_num(t_swap *swap, char *argv)
 	}
 }
 
-void	ft_check_double(t_swap *swap, char *argv[])
+void	ft_check_double(t_swap *swap)
 {
 	int	i;
 	int	j;
-	int len;
 
 	i = -1;
 	while (++i <= swap->lena)
@@ -45,10 +44,9 @@ void	ft_check_double(t_swap *swap, char *argv[])
 	}
 }
 
-void	ft_check_int(t_swap *swap, char *argv[])
+void	ft_check_int(t_swap *swap)
 {
 	int i;
-	int len;
 
 	i = -1;
 	while (++i < swap->lena)

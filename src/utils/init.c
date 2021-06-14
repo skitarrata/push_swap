@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 15:24:02 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/11 18:33:18 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/06/14 16:26:18 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ void	ft_print(t_swap *swap)
 	i = -1;
 	while (++i < swap->lena)
 		printf("%ld\n", swap->veta[i]);
+	i = -1;
+	printf("\n\n");
+	while (++i < swap->lenb)
+		printf("%ld\n", swap->vetb[i]);
 }
 
 void	ft_init_vet(t_swap *swap, char *argv[])
@@ -58,7 +62,7 @@ void	ft_init_vet(t_swap *swap, char *argv[])
 	i = 0;
 	k = 0;
 	sign = 1;
-	swap->vetb = NULL;
+	//swap->vetb = NULL;
 	ft_word_counter(swap, argv);
 	swap->veta = (long *)ft_calloc(swap->lena, sizeof(long));
 	if (!(swap->veta))
@@ -82,7 +86,7 @@ void	ft_init_vet(t_swap *swap, char *argv[])
 			}
 		}
 	}
-	ft_check_double(swap, argv);
-	ft_check_int(swap, argv);
-	ft_print(swap);
+	ft_check_double(swap);
+	ft_check_int(swap);
+	//ft_print(swap);
 }

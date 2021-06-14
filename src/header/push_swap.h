@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 15:23:44 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/11 18:29:43 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/06/14 15:48:20 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	ft_parse_arg(t_swap *swap, int argc, char **argv);
 
 //Check
 void	ft_check_num(t_swap *swap, char *argv);
-void	ft_check_double(t_swap *swap, char *argv[]);
-void	ft_check_int(t_swap *swap, char *argv[]);
+void	ft_check_double(t_swap *swap);
+void	ft_check_int(t_swap *swap);
 
 //push
 void	ft_sa(t_swap *swap);
