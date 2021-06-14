@@ -26,7 +26,7 @@ int		main(int argc, char *argv[])
 		ft_print(swap);
 		ft_error(swap, END);
 	}
-	ft_rra(swap);
+	ft_pa(swap);
 	ft_print(swap);
 	ft_error(swap, END);
 }

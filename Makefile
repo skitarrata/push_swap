@@ -2,7 +2,7 @@ NAME = push_swap
 VET = 1 333 5 7
 
 LIBFT = ./libft.a
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Werror -Wextra
 
 SRCS = 	$(shell find . -name '*.c')
 FILES = $(shell find . -name '*.c' -name '*.h')

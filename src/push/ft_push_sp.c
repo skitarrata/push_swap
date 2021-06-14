@@ -26,13 +26,15 @@ void	ft_sb(t_swap *swap)
 
 void	ft_pa(t_swap *swap)
 {
-	int	tmp;
-
-	if (!swap->vetb || !swap->veta)
-		ft_error(swap, NOT_VET) ;
-	tmp = swap->veta[0];
+	if (!swap->vetb)
+		return ;
+	swap->veta = ft_intjoin(swap, swap->veta, swap->lena);
+	swap->lena += 1;
 	swap->veta[0] = swap->vetb[0];
-	swap->vetb[0] = tmp;
+	swap->vetb = ft_intremove(swap, swap->vetb, swap->lenb);
+	if (swap->lenb == 1)
+		free(swap->vetb);
+	swap->lenb -= 1;
 	ft_putstr("pa\n");
 }
 

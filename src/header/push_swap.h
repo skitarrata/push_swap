@@ -31,6 +31,8 @@ typedef struct	s_swap
 void	ft_putstr(char *text);
 void	ft_init_vet(t_swap *swap, char **argv);
 void	ft_print(t_swap *swap);
+long	*ft_intjoin(t_swap *swap, long const *vet, int dim);
+long	*ft_intremove(t_swap *swap, long const *vet, int dim);
 
 //parsing
 void	ft_parse_arg(t_swap *swap, int argc, char **argv);
