@@ -47,7 +47,7 @@ void	ft_print(t_swap *swap)
 	while (++i < swap->lena)
 		printf("%ld\n", swap->veta[i]);
 	i = -1;
-	printf("\n\n");
+	printf("\n");
 	while (++i < swap->lenb)
 		printf("%ld\n", swap->vetb[i]);
 }

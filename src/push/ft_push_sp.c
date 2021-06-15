@@ -22,6 +22,7 @@ void	ft_sa(t_swap *swap)
 	swap->veta[0] = swap->veta[1];
 	swap->veta[1] = tmp;
 	ft_putstr("sa\n");
+	ft_print(swap);
 }
 
 void	ft_sb(t_swap *swap)
@@ -34,6 +35,7 @@ void	ft_sb(t_swap *swap)
 	swap->vetb[0] = swap->vetb[1];
 	swap->vetb[1] = tmp;
 	ft_putstr("sb\n");
+	ft_print(swap);
 }
 
 void	ft_pa(t_swap *swap)
@@ -52,6 +54,7 @@ void	ft_pa(t_swap *swap)
 	free(a);
 	swap->lenb -= 1;
 	ft_putstr("pa\n");
+	ft_print(swap);
 }
 
 void	ft_pb(t_swap *swap)
@@ -70,4 +73,5 @@ void	ft_pb(t_swap *swap)
 	free(a);
 	swap->lena -= 1;
 	ft_putstr("pb\n");
+	ft_print(swap);
 }

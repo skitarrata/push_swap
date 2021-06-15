@@ -13,6 +13,7 @@ void	ft_ra(t_swap *swap)
 		swap->veta[i] = swap->veta[i + 1];
 	swap->veta[i] = tmp;
 	ft_putstr("ra\n");
+	ft_print(swap);
 }
 
 void	ft_rb(t_swap *swap)
@@ -28,6 +29,7 @@ void	ft_rb(t_swap *swap)
 		swap->vetb[i] = swap->vetb[i + 1];
 	swap->vetb[i] = tmp;
 	ft_putstr("rb\n");
+	ft_print(swap);
 }
 
 void	ft_rra(t_swap *swap)
@@ -43,6 +45,7 @@ void	ft_rra(t_swap *swap)
 		swap->veta[i] = swap->veta[i - 1];
 	swap->veta[i] = tmp;
 	ft_putstr("rra\n");
+	ft_print(swap);
 }
 
 void	ft_rrb(t_swap *swap)
@@ -58,4 +61,5 @@ void	ft_rrb(t_swap *swap)
 		swap->vetb[i] = swap->vetb[i - 1];
 	swap->vetb[i] = tmp;
 	ft_putstr("rrb\n");
+	ft_print(swap);
 }
