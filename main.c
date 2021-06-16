@@ -24,15 +24,17 @@ int		ft_subvet(int arr[], int n, int *max)
 	return (max_end);
 }
 
-/* void	ft_subvet(int arr[], int n, int max)
+/* void	ft_subsequence(int arr[], int n, int max)
 {
 	int i;
 	int j;
+	int z;
 	int count;
 	int vet[max];
 
 	i = 0;
 	j = 0;
+	z = 0;
 	count = 0;
 	vet[i] = arr[i];
 	while (j < max - 1 && i < n - 1)
@@ -50,11 +52,66 @@ int		ft_subvet(int arr[], int n, int *max)
 			i = count;
 			vet[j] = arr[i];
 		}
+		if (vet[0] == vet[1])
+			{
+				z++;
+				i = z;
+				j = 0;
+				vet[0] = arr[i];
+			}
 	}
 	i = -1;
 	while (++i < max)
 		printf("%d\n", vet[i]);
 } */
+
+void		ft_subsequence(int arr[], int n, int max)
+{
+	int i;
+	int j;
+	int z;
+	int tmp;
+	int count;
+	int rip;
+	int vet[max];
+
+	i = 0;
+	z = 0;
+	rip = 0;
+	vet[i] = i;
+	while (i < n - 1)
+	{
+		count = 0;
+		if (arr[vet[z]] < arr[i + 1])
+		{
+			vet[z + 1] = i + 1;
+			z++;
+		}
+		else
+		{
+			j = 0;
+			while (j <= i)
+				if (arr[j++] < arr[i + 1])
+					count++;
+			if (count == i)
+				vet[z] = i + 1;
+			else if (count == 1)
+				tmp = i + 1;
+		}
+		//printf("%d\n", vet[z]);
+		i++;
+		if (i == n - 1 && z != max - 1)
+		{
+			rip++;
+			z = 0;
+			vet[z + rip] = tmp;
+			i = tmp + 1;
+		}
+	}
+	i = -1;
+	while (++i < max)
+		printf("%d\n", arr[vet[i]]);
+}
 
 int		ft_lis(int arr[], int n)
 {
@@ -62,75 +119,15 @@ int		ft_lis(int arr[], int n)
 
 	max = 1;
 	ft_subvet(arr, n, &max);
+	ft_subsequence(arr, n, max);
 	return (max);
-}
-
-void		ft_subsequence(int x[], int n)
-{
-	int	p[n];
-	int	m[n + 1];
-	int l;
-	int i;
-	int newl;
-	int lo;
-	int hi;
-	int mid;
-
-	l = 0;
-	i = -1;
-	while (++i < n)
-		p[i] = 0;
-	i = -1;
-	while (++i < n + 1)
-		m[i] = 0;
-	i = 0;
-	while (i < n - 1)
-	{
-		lo = 1;
-		hi = l;
-		while (lo <= hi)
-		{
-			if ((lo + hi) % 2)
-				mid = (int)((lo + hi) / 2) + 1;
-			else
-				mid = ((lo + hi) / 2);
-			printf("%d\n",mid);
-			if (x[m[mid]] < x[i])
-				lo = mid + 1;
-			else
-				hi = mid - 1;
-		}
-		newl = lo;
-		p[i] = m[newl - 1];
-		m[newl] = i;
-		if (newl > l)
-			l = newl;
-		i++;
-	}
-/* 	i = -1;
-	while (++i < n)
-		printf("%d\n",p[i]); */
-	int s[l];
-	int k;
-
-	i = l - 1;
-	k = m[l];
-	while (i > 0)
-	{
-		s[i] = x[k];
-		k = p[k];
-		i--;
-	}
-	i = -1;
-	while (++i < l)
-		printf("\n%d\n",s[i]);
 }
 
 int main()
 {
-    int arr[] = { 0, 8, 11, 10, 2, 14 };
+    int arr[] = { 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 };
     int n = sizeof(arr) / sizeof(arr[0]);
-	ft_subsequence(arr, n);
+	//ft_subsequence(arr, n);
     printf("vet of lis is %d\n", ft_lis(arr, n));
     return 0;
 }

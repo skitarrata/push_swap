@@ -54,7 +54,8 @@ static void ft_comb_5(t_swap *swap)
 			ft_comb_3(swap);
 			i++;
 		}
-		if (cycle = ft_check_order(swap, 0))
+		cycle = ft_check_order(swap, 0);
+		if (cycle)
 			ft_rra(swap);
 	}
 }
