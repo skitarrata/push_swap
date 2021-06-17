@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 15:24:13 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/14 17:20:15 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/06/17 17:34:14 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int		main(int argc, char *argv[])
 		ft_error(swap, END);
 	}
 	ft_which_combination(swap);
-	//ft_print(swap);
 	ft_error(swap, END);
 }

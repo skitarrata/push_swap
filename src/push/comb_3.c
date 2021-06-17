@@ -1,15 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   comb_3.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/17 16:47:45 by svalenti          #+#    #+#             */
+/*   Updated: 2021/06/17 19:23:10 by svalenti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../header/push_swap.h"
-
-int	ft_check_order(t_swap *swap, int b)
-{
-	int i;
-
-	i = -1 + b;
-	while (++i < swap->lena - 1)
-		if (swap->veta[i] > swap->veta[i + 1])
-			return (1);
-	return (0);
-}
 
 static void	ft_comb_3(t_swap *swap)
 {
@@ -42,6 +43,7 @@ static void ft_comb_5(t_swap *swap)
 	dim = i;
 	while (cycle)
 	{
+		ft_comb_3(swap);
 		while (i > 3 && ft_check_order(swap, 1))
 		{
 			ft_pb(swap);
@@ -59,6 +61,18 @@ static void ft_comb_5(t_swap *swap)
 			ft_rra(swap);
 	}
 }
+
+/* static void ft_comb(t_swap *swap)
+{
+	int cycle;
+
+	cycle = 1;
+	while (cycle)
+	{
+		ft_comb_3(swap);
+		cycle = ft_check_order(swap, 0);
+	}
+} */
 
 void	ft_which_combination(t_swap *swap)
 {

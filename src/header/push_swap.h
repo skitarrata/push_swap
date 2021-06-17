@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 15:23:44 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/14 15:48:20 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/06/17 17:34:54 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct	s_swap
 	long		*subv;
 	long		*index;
 	int			lsub;
+	int			mov;
 }				t_swap;
 
 //utils

@@ -1,5 +1,5 @@
 NAME = push_swap
-VET =  5 4 2 3
+VET =  5 2 4 6 1
 
 LIBFT = ./libft.a
 FLAGS = -Wall -Werror -Wextra
@@ -36,7 +36,6 @@ leaks: $(MAKE) all
 
 run: $(MAKE) re
 	@./$(NAME) $(VET)
-
 clean:
 	@rm -rf $(OBJ)
 	@$(MAKE) clean -C ./libft
