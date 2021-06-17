@@ -22,12 +22,6 @@ int		main(int argc, char *argv[])
 	ft_parse_arg(swap, argc, argv);
 	ft_init_vet(swap, argv);
 
-/* 	swap->vetb = ft_calloc(4, sizeof(long));
-	swap->vetb[0] = 4;
-	swap->vetb[1] = 5;
-	swap->vetb[2] = 7;
-	swap->vetb[3] = 1;
-	swap->lenb = 4; */
 	swap->vetb = NULL;
 	if (swap->lena == 1)
 	{

@@ -25,6 +25,9 @@ typedef struct	s_swap
 	long		*vetb;
 	int			lena;
 	int			lenb;
+	long		*subv;
+	long		*index;
+	int			lsub;
 }				t_swap;
 
 //utils
@@ -56,6 +59,7 @@ void	ft_rb(t_swap *swap);
 void	ft_rra(t_swap *swap);
 void	ft_rrb(t_swap *swap);
 void	ft_which_combination(t_swap *swap);
+void	ft_subsequence(t_swap *swap);
 
 //free
 void	ft_free_swap(t_swap *swap);

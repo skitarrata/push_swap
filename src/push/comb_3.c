@@ -66,4 +66,6 @@ void	ft_which_combination(t_swap *swap)
 		ft_comb_3(swap);
 	else if (swap->lena > 3 && swap->lena <= 5)
 		ft_comb_5(swap);
+	else if (swap->lena > 5)
+		ft_subsequence(swap);
 }
