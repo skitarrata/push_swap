@@ -67,3 +67,13 @@ int	ft_check_order(t_swap *swap, int b)
 			return (1);
 	return (0);
 }
+
+int	ft_check_three(long *vet, int dim)
+{
+	int i;
+
+	i = dim;
+	if (vet[0] > vet[1] || vet[1] > vet[i - 1])
+		return (1);
+	return (0);
+}

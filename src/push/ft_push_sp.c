@@ -12,7 +12,7 @@
 
 #include "../header/push_swap.h"
 
-void	ft_sa(t_swap *swap)
+void	ft_sa(t_swap *swap, int c)
 {
 	int	tmp;
 
@@ -21,12 +21,11 @@ void	ft_sa(t_swap *swap)
 	tmp = swap->veta[0];
 	swap->veta[0] = swap->veta[1];
 	swap->veta[1] = tmp;
-	ft_putstr("sa\n");
-	swap->mov++;
-	ft_print(swap);
+	if (!c)
+		ft_message(swap, "sa\n");
 }
 
-void	ft_sb(t_swap *swap)
+void	ft_sb(t_swap *swap, int c)
 {
 	int	tmp;
 
@@ -35,9 +34,8 @@ void	ft_sb(t_swap *swap)
 	tmp = swap->vetb[0];
 	swap->vetb[0] = swap->vetb[1];
 	swap->vetb[1] = tmp;
-	ft_putstr("sb\n");
-	swap->mov++;
-	ft_print(swap);
+	if (!c)
+		ft_message(swap, "sb\n");
 }
 
 void	ft_pa(t_swap *swap)

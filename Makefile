@@ -2,7 +2,7 @@ NAME = push_swap
 VET =  5 2 4 6 1
 
 LIBFT = ./libft.a
-FLAGS = -Wall -Werror -Wextra
+#FLAGS = -Wall -Werror -Wextra
 
 SRCS = 	$(shell find . -name '*.c')
 FILES = $(shell find . -name '*.c' -name '*.h')
@@ -15,7 +15,7 @@ $(NAME): $(OBJ) $(LIBFT)
 	@rm -rf push_swap
 	@echo "[push_swap compilation...]"
 	@$(MAKE) bonus -C ./libft
-	@$(CC) $(SRCS) $(FLAGS) $(LIBFT) -o $(NAME) -g
+	@$(CC) $(SRCS) $(LIBFT) -o $(NAME) -g
 	@echo "[Done!]"
 	@$(MAKE) clean
 #-fsanitize=address

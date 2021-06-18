@@ -25,6 +25,7 @@ typedef struct	s_swap
 	long		*vetb;
 	int			lena;
 	int			lenb;
+	long		*vet;
 	long		*subv;
 	long		*index;
 	int			lsub;
@@ -46,21 +47,23 @@ void	ft_check_num(t_swap *swap, char *argv);
 void	ft_check_double(t_swap *swap);
 void	ft_check_int(t_swap *swap);
 int		ft_check_order(t_swap *swap, int b);
+int		ft_check_three(long *vet, int dim);
 
 //push
-void	ft_sa(t_swap *swap);
-void	ft_sb(t_swap *swap);
+void	ft_sa(t_swap *swap, int c);
+void	ft_sb(t_swap *swap, int c);
 void	ft_pa(t_swap *swap);
 void	ft_pb(t_swap *swap);
 void	ft_ss(t_swap *swap);
 void	ft_rr(t_swap *swap);
 void	ft_rrr(t_swap *swap);
-void	ft_ra(t_swap *swap);
-void	ft_rb(t_swap *swap);
-void	ft_rra(t_swap *swap);
-void	ft_rrb(t_swap *swap);
+void	ft_ra(t_swap *swap, int c);
+void	ft_rb(t_swap *swap, int c);
+void	ft_rra(t_swap *swap, int c);
+void	ft_rrb(t_swap *swap, int c);
 void	ft_which_combination(t_swap *swap);
 void	ft_subsequence(t_swap *swap);
+void	ft_message(t_swap *swap, char *txt);
 
 //free
 void	ft_free_swap(t_swap *swap);

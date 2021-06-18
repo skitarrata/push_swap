@@ -12,7 +12,14 @@
 
 #include "../header/push_swap.h"
 
-void	ft_ra(t_swap *swap)
+void	ft_message(t_swap *swap, char *txt)
+{
+	ft_putstr(txt);
+	swap->mov++;
+	ft_print(swap);
+}
+
+void	ft_ra(t_swap *swap, int c)
 {
 	int	tmp;
 	int	i;
@@ -24,12 +31,11 @@ void	ft_ra(t_swap *swap)
 	while (++i < swap->lena - 1)
 		swap->veta[i] = swap->veta[i + 1];
 	swap->veta[i] = tmp;
-	ft_putstr("ra\n");
-	swap->mov++;
-	ft_print(swap);
+	if (!c)
+		ft_message(swap, "ra\n");
 }
 
-void	ft_rb(t_swap *swap)
+void	ft_rb(t_swap *swap, int c)
 {
 	int	tmp;
 	int	i;
@@ -41,12 +47,11 @@ void	ft_rb(t_swap *swap)
 	while (++i < swap->lenb - 1)
 		swap->vetb[i] = swap->vetb[i + 1];
 	swap->vetb[i] = tmp;
-	ft_putstr("rb\n");
-	swap->mov++;
-	ft_print(swap);
+	if (!c)
+		ft_message(swap, "rb\n");
 }
 
-void	ft_rra(t_swap *swap)
+void	ft_rra(t_swap *swap, int c)
 {
 	int	tmp;
 	int	i;
@@ -58,12 +63,11 @@ void	ft_rra(t_swap *swap)
 	while (--i > 0)
 		swap->veta[i] = swap->veta[i - 1];
 	swap->veta[i] = tmp;
-	ft_putstr("rra\n");
-	swap->mov++;
-	ft_print(swap);
+	if (!c)
+		ft_message(swap, "rra\n");
 }
 
-void	ft_rrb(t_swap *swap)
+void	ft_rrb(t_swap *swap, int c)
 {
 	int	tmp;
 	int	i;
@@ -75,7 +79,6 @@ void	ft_rrb(t_swap *swap)
 	while (--i > 0)
 		swap->vetb[i] = swap->vetb[i - 1];
 	swap->vetb[i] = tmp;
-	ft_putstr("rrb\n");
-	swap->mov++;
-	ft_print(swap);
+	if (!c)
+		ft_message(swap, "rrb\n");
 }

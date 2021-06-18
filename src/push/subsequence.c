@@ -19,8 +19,21 @@ static void	ft_lensub(t_swap *swap)
 	i = -1;
 	swap->lsub = 1;
 	while (++i < swap->lena - 1)
-		if (swap->subv[i] < swap->subv[i + 1])
-			swap->lsub = swap->subv[i + 1];
+		if (swap->vet[i] < swap->vet[i + 1])
+			swap->lsub = swap->vet[i + 1];
+}
+
+static void	ft_subvector(t_swap *swap)
+{
+	int i;
+
+	swap->subv = (long *)ft_calloc(swap->lsub, sizeof(long));
+	if (!swap->subv)
+		ft_error(swap, MALLOC_FAIL);
+	i = -1;
+	while (++i < swap->lsub)
+		swap->subv[i] = swap->veta[swap->index[i]];
+	free(swap->index);
 }
 
 static void	ft_index_sub(t_swap *swap)
@@ -36,13 +49,15 @@ static void	ft_index_sub(t_swap *swap)
 	count = swap->lsub;
 	while (count > 0)
 	{
-		if (swap->subv[i] == count)
+		if (swap->vet[i] == count)
 		{
 			count--;
 			swap->index[count] = i;
 		}
 		i--;
 	}
+	ft_subvector(swap);
+	free(swap->vet);
 }
 
 void	ft_subsequence(t_swap *swap)
@@ -50,11 +65,11 @@ void	ft_subsequence(t_swap *swap)
 	int i;
 	int j;
 
-	swap->subv = (long *)ft_calloc(swap->lena, sizeof(long));
-	if (!swap->subv)
+	swap->vet = (long *)ft_calloc(swap->lena, sizeof(long));
+	if (!swap->vet)
 		ft_error(swap, MALLOC_FAIL);
 	i = 0;
-	swap->subv[i] = 1;
+	swap->vet[i] = 1;
 	while (i < swap->lena)
 	{
 		j = -1;
@@ -62,15 +77,16 @@ void	ft_subsequence(t_swap *swap)
 		{
 			if (swap->veta[j] < swap->veta[i])
 			{
-				if (swap->subv[i] < swap->subv[j] + 1)
-					swap->subv[i] = swap->subv[j] + 1;
+				if (swap->vet[i] < swap->vet[j] + 1)
+					swap->vet[i] = swap->vet[j] + 1;
 			}
-			else if (swap->veta[j] > swap->veta[i] && !swap->subv[i])
-				swap->subv[i] = 1;
+			else if (swap->veta[j] > swap->veta[i] && !swap->vet[i])
+				swap->vet[i] = 1;
 		}
 		i++;
 	}
 	ft_index_sub(swap);
+	//free(swap->vet);
 /* 	i = -1;
 	while (++i < swap->lsub)
 		printf("%ld\n", swap->veta[swap->index[i]]); */
