@@ -113,4 +113,5 @@ void	ft_init_vet(t_swap *swap, char *argv[])
 	}
 	ft_check_double(swap);
 	ft_check_int(swap);
+	//ft_bubbleSort(swap);
 }

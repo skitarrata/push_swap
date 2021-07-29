@@ -25,10 +25,12 @@ typedef struct	s_swap
 	long		*vetb;
 	int			lena;
 	int			lenb;
-	long		*vet;
-	long		*subv;
-	long		*index;
-	int			lsub;
+	//long		*vet;
+	//long		*subv;
+	//long		*index;
+	//long		*sort;
+	//int			lso;
+	//int			lsub;
 	int			mov;
 }				t_swap;
 
@@ -62,11 +64,24 @@ void	ft_rb(t_swap *swap, int c);
 void	ft_rra(t_swap *swap, int c);
 void	ft_rrb(t_swap *swap, int c);
 void	ft_which_combination(t_swap *swap);
-void	ft_subsequence(t_swap *swap);
+//void	ft_subsequence(t_swap *swap);
 void	ft_message(t_swap *swap, char *txt);
+
+//sorting
+//void	ft_bubbleSort(t_swap *swap);
+
+//find
+long	ft_find_max(t_swap *swap);
+long	ft_find_max_a(t_swap *swap);
+long	ft_find_min(t_swap *swap);
+void	ft_check(t_swap *swap);
+
+//order_stack
+void	ft_sort(t_swap *swap, int div);
+void	ft_sort_three(t_swap *swap);
 
 //free
 void	ft_free_swap(t_swap *swap);
 void	ft_error(t_swap *swap, char *text);
-
+void	ft_printvet(t_swap *swap);
 #endif

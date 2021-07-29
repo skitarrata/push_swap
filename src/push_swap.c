@@ -21,7 +21,6 @@ int		main(int argc, char *argv[])
 		ft_error(swap, MALLOC_FAIL);
 	ft_parse_arg(swap, argc, argv);
 	ft_init_vet(swap, argv);
-
 	swap->vetb = NULL;
 	if (swap->lena == 1)
 	{
