@@ -62,7 +62,8 @@ void	ft_print(t_swap *swap)
 	while (i < swap->lena || i < swap->lenb)
 	{
 		str1 = ft_itoa(swap->veta[i]);
-		ft_putstr(str1);
+		if (i < swap->lena)
+			ft_putstr(str1);
 		if (i < swap->lenb)
 		{
 			ft_putstr("		");
@@ -113,5 +114,4 @@ void	ft_init_vet(t_swap *swap, char *argv[])
 	}
 	ft_check_double(swap);
 	ft_check_int(swap);
-	//ft_bubbleSort(swap);
 }
