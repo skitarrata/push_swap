@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_order_stack.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/10 16:54:33 by svalenti          #+#    #+#             */
+/*   Updated: 2021/11/10 17:38:10 by svalenti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
 static void	ft_bring_back(t_swap *swap)
 {
-	int half_len;
-	int i;
-	long check;
+	int		half_len;
+	int		i;
+	long	check;
 
 	i = -1;
 	half_len = swap->lenb / 2;
@@ -26,7 +37,7 @@ static void	ft_bring_back(t_swap *swap)
 
 static int	ft_count_min(t_swap *swap, long check)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < swap->lena)
@@ -55,8 +66,8 @@ static void	ft_move_to_top(t_swap *swap, int i, int half_len)
 
 static void	ft_sort2(t_swap *swap, int min, int c_size, int c_num)
 {
-	int     half_len;
-	int     i;
+	int	half_len;
+	int	i;
 
 	while (ft_count_min(swap, min + c_size * c_num) > 0)
 	{
@@ -96,14 +107,4 @@ void	ft_sort(t_swap *swap, int div)
 		ft_bring_back(swap);
 		ft_pa(swap);
 	}
-}
-
-void	ft_which_combination(t_swap *swap)
-{
-	if (swap->lena <= 3)
-		ft_sort_three(swap);
-	else if (swap->lena > 3 && swap->lena < 500)
-		ft_sort(swap, 5);
-	else if (swap->lena >= 500)
-		ft_sort(swap, 11);
 }

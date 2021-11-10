@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/10 16:52:09 by svalenti          #+#    #+#             */
+/*   Updated: 2021/11/10 19:23:58 by svalenti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
 long	ft_find_max(t_swap *swap)
 {
 	long	max;
-	int i;
+	int		i;
 
 	i = 0;
 	max = swap->vetb[0];
@@ -17,7 +28,7 @@ long	ft_find_max(t_swap *swap)
 long	ft_find_max_a(t_swap *swap)
 {
 	long	max;
-	int	i;
+	int		i;
 
 	i = 0;
 	max = swap->veta[0];
@@ -30,7 +41,7 @@ long	ft_find_max_a(t_swap *swap)
 long	ft_find_min(t_swap *swap)
 {
 	long	min;
-	int i;
+	int		i;
 
 	i = 0;
 	min = swap->veta[0];
@@ -42,7 +53,7 @@ long	ft_find_min(t_swap *swap)
 
 static void	ft_pass_min_zero_pos(t_swap *swap)
 {
-	long min;
+	long	min;
 
 	min = ft_find_min(swap);
 	while (swap->veta[0] > min)
@@ -66,5 +77,6 @@ void	ft_check(t_swap *swap)
 	ft_sort_three(swap);
 	while (swap->lenb > 0)
 		ft_pa(swap);
-	ft_error(swap, END);
+	ft_free_swap(swap);
+	exit(0);
 }

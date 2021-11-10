@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: svalenti <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/01/14 12:54:37 by svalenti          #+#    #+#              #
-#    Updated: 2021/01/18 16:03:56 by svalenti         ###   ########.fr        #
+#    Created: 2021/01/14 12:29:05 by grusso            #+#    #+#              #
+#    Updated: 2021/11/10 16:26:31 by svalenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,13 +39,12 @@ SRCS		= ft_memset.c \
 			  ft_substr.c \
 			  ft_strjoin.c \
 			  ft_strtrim.c \
-			  ft_split.c \
 			  ft_itoa.c \
 			  ft_strmapi.c \
 			  ft_putchar_fd.c \
 			  ft_putstr_fd.c \
 			  ft_putendl_fd.c \
-			  ft_putnbr_fd.c
+			  ft_putnbr_fd.c \
 
 BNS_SRCS	= ft_lstnew.c \
 			  ft_lstadd_front.c \
@@ -56,7 +55,7 @@ BNS_SRCS	= ft_lstnew.c \
 			  ft_lstclear.c \
 			  ft_lstiter.c \
 			  ft_lstmap.c \
-				
+
 OBJS		= $(SRCS:%.c=%.o)
 
 BNS_OBJS	= $(BNS_SRCS:%.c=%.o)

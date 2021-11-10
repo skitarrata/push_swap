@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svalenti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: grusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 15:34:25 by svalenti          #+#    #+#             */
-/*   Updated: 2021/01/14 17:18:23 by svalenti         ###   ########.fr       */
+/*   Created: 2021/01/14 10:13:02 by grusso            #+#    #+#             */
+/*   Updated: 2021/01/14 17:14:22 by grusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ void	*ft_memmove(void *str1, const void *str2, size_t n)
 	if (!des && !res)
 		return (0);
 	if (des > res)
+	{
 		while (++i <= n)
 			des[n - i] = res[n - i];
+	}
 	else
 	{
 		while (i < n)

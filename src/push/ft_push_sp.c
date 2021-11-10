@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 15:46:48 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/17 17:36:44 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/11/10 20:10:16 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_sa(t_swap *swap, int c)
 	int	tmp;
 
 	if (!swap->veta)
-		ft_error(swap, NOT_VETA);
+		ft_error(swap, ERR);
 	tmp = swap->veta[0];
 	swap->veta[0] = swap->veta[1];
 	swap->veta[1] = tmp;
@@ -30,7 +30,7 @@ void	ft_sb(t_swap *swap, int c)
 	int	tmp;
 
 	if (!swap->vetb)
-		ft_error(swap, NOT_VETB) ;
+		ft_error(swap, ERR);
 	tmp = swap->vetb[0];
 	swap->vetb[0] = swap->vetb[1];
 	swap->vetb[1] = tmp;
@@ -41,7 +41,7 @@ void	ft_sb(t_swap *swap, int c)
 void	ft_pa(t_swap *swap)
 {
 	long	*a;
-	
+
 	if (!swap->vetb)
 		return ;
 	a = swap->veta;
@@ -55,13 +55,12 @@ void	ft_pa(t_swap *swap)
 	swap->lenb -= 1;
 	ft_putstr("pa\n");
 	swap->mov++;
-	ft_print(swap);
 }
 
 void	ft_pb(t_swap *swap)
 {
 	long	*a;
-	
+
 	if (!swap->veta)
 		return ;
 	a = swap->vetb;
@@ -75,5 +74,4 @@ void	ft_pb(t_swap *swap)
 	swap->lena -= 1;
 	ft_putstr("pb\n");
 	swap->mov++;
-	ft_print(swap);
 }

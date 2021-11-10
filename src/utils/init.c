@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 15:24:02 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/17 17:54:42 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/11/10 20:07:49 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,60 +39,14 @@ static void	ft_word_counter(t_swap *swap, char *argv[])
 	swap->lena = count - 1;
 }
 
-static void	ft_print_mov(t_swap *swap)
+void	ft_parse(t_swap *swap, char *argv[], int sign)
 {
-	char	*str;
-
-	str = ft_itoa(swap->mov);
-	ft_putstr("	MOVE\n");
-	ft_putstr("	");
-	ft_putstr(str);
-	ft_putstr("\n\n");
-	free(str);
-}
-
-void	ft_print(t_swap *swap)
-{
-	int		i;
-	char	*str1;
-	char	*str2;	
-
-	i = 0;
-	ft_putstr("STACK A		STACK B\n");
-	while (i < swap->lena || i < swap->lenb)
-	{
-		str1 = ft_itoa(swap->veta[i]);
-		if (i < swap->lena)
-			ft_putstr(str1);
-		if (i < swap->lenb)
-		{
-			ft_putstr("		");
-			str2 = ft_itoa(swap->vetb[i]);
-			ft_putstr(str2);
-			free(str2);
-		}
-		ft_putstr("\n");
-		free(str1);
-		i++;
-	}
-	ft_print_mov(swap);
-}
-
-void	ft_init_vet(t_swap *swap, char *argv[])
-{
-	int i;
-	int j;
-	int k;
-	int sign;
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	k = 0;
-	sign = 1;
-	//swap->vetb = NULL;
-	ft_word_counter(swap, argv);
-	swap->veta = (long *)ft_calloc(swap->lena, sizeof(long));
-	if (!(swap->veta))
-		ft_error(swap, MALLOC_FAIL);
 	while (argv[++i])
 	{
 		j = -1;
@@ -112,6 +66,18 @@ void	ft_init_vet(t_swap *swap, char *argv[])
 			}
 		}
 	}
+}
+
+void	ft_init_vet(t_swap *swap, char *argv[])
+{
+	int	sign;
+
+	sign = 1;
+	ft_word_counter(swap, argv);
+	swap->veta = (long *)ft_calloc(swap->lena, sizeof(long));
+	if (!(swap->veta))
+		ft_error(swap, ERR);
+	ft_parse(swap, argv, sign);
 	ft_check_double(swap);
 	ft_check_int(swap);
 }

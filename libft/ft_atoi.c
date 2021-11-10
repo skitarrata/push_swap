@@ -3,16 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svalenti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 17:19:53 by svalenti          #+#    #+#             */
-/*   Updated: 2021/01/15 16:22:29 by svalenti         ###   ########.fr       */
+/*   Created: 2021/01/14 16:01:11 by grusso            #+#    #+#             */
+/*   Updated: 2021/11/10 17:24:12 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_check_atoi(long res, int s)
+{
+	if ((res == 2147483648 && s == -1) || res <= 2147483648)
+		return (res * s);
+	if (s == 1)
+		return (-1);
+	else
+		return (0);
+}
+
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		s;
@@ -21,8 +31,8 @@ int		ft_atoi(const char *str)
 	i = 0;
 	s = 1;
 	res = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
-			str[i] == '\f' || str[i] == '\v' || str[i] == '\r')
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\f' || str[i] == '\v' || str[i] == '\r')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -36,7 +46,5 @@ int		ft_atoi(const char *str)
 		if (res > 2147483648)
 			break ;
 	}
-	if ((res == 2147483648 && s == -1) || res <= 2147483648)
-		return (res * s);
-	return (s == 1 ? -1 : 0);
+	return (ft_check_atoi(res, s));
 }

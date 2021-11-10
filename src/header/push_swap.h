@@ -6,7 +6,7 @@
 /*   By: svalenti <svalenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 15:23:44 by svalenti          #+#    #+#             */
-/*   Updated: 2021/06/17 17:34:54 by svalenti         ###   ########.fr       */
+/*   Updated: 2021/11/10 20:07:51 by svalenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "libft.h"
-# include "error.h"
 
-typedef struct	s_swap
+# define ERR "Error\n"
+
+typedef struct s_swap
 {
 	long		*veta;
 	long		*vetb;
@@ -31,7 +32,6 @@ typedef struct	s_swap
 //utils
 void	ft_putstr(char *text);
 void	ft_init_vet(t_swap *swap, char **argv);
-void	ft_print(t_swap *swap);
 long	*ft_intjoin(t_swap *swap, long const *vet, int dim);
 long	*ft_intremove(t_swap *swap, long const *vet, int dim);
 
@@ -73,5 +73,4 @@ void	ft_sort_three(t_swap *swap);
 //free
 void	ft_free_swap(t_swap *swap);
 void	ft_error(t_swap *swap, char *text);
-void	ft_printvet(t_swap *swap);
 #endif

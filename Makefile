@@ -1,8 +1,7 @@
 NAME = push_swap
-VET =  5 2 4 6 1
 
 LIBFT = ./libft.a
-#FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
 SRCS = 	$(shell find . -name '*.c')
 FILES = $(shell find . -name '*.c' -name '*.h')
@@ -32,7 +31,7 @@ norme:
 	@norminette $(FILES)
 
 leaks: $(MAKE) all
-	@leaks --atExit -- ./$(NAME) $(VET)
+	@leaks --atExit -- ./$(NAME)
 
 run: $(MAKE) re
 	@./$(NAME) $(VET)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svalenti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: grusso <grusso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 15:55:46 by svalenti          #+#    #+#             */
-/*   Updated: 2021/01/14 16:53:01 by svalenti         ###   ########.fr       */
+/*   Created: 2021/01/11 15:25:12 by grusso            #+#    #+#             */
+/*   Updated: 2021/06/11 17:47:45 by grusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *restrict d, const void *restrict s, int c, size_t n)
 	while (i < n)
 	{
 		((unsigned char *)d)[i] = ((unsigned char *)s)[i];
-		if ((unsigned char)c == ((unsigned char *)s)[i])
+		if (((unsigned char *)s)[i] == (unsigned char)c)
 			return (d + i + 1);
 		i++;
 	}
